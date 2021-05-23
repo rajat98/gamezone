@@ -12,6 +12,12 @@ const screens = {
         screen: ReviewDetails,
     },
 }
-const HomeStack = createStackNavigator(screens);
+// use default navigation here instead of declaring for each screen
+const HomeStack = createStackNavigator(screens, {
+    defaultNavigationOptions:{
+        headerTintColor: '#444',
+        headerStyle: {backgroundColor: '#eee', height: 60,}
+    }
+});
 
 export default createAppContainer(HomeStack);
