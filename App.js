@@ -5,7 +5,7 @@ const getFonts = () => Font.loadAsync({
     'nunito-regular': require('./assets/font/Nunito-Regular.ttf'),
     'nunito-bold': require('./assets/font/Nunito-Bold.ttf')
   });
-import Navigator from'./routes/homeStack'
+import Navigator from './routes/drawer'
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   if(fontsLoaded) {
