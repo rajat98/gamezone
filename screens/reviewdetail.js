@@ -11,8 +11,10 @@ export default function home({navigation}){
     }
     return(
         <View style={globalStyles.container}>
-            <Text>ReviewDetails Screen</Text>
-            <Button title='back' onPress={pressHandler}/>
+            <Text>Title: {navigation.getParam('title')}</Text>
+            <Text>Rating: {navigation.getParam('rating')}</Text>
+            <Text>Genre: {navigation.getParam('body')}</Text>
+            {/*<Button title='back' onPress={pressHandler}/>*/}
         </View>
     )
 }

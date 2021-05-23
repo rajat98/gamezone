@@ -1,5 +1,5 @@
-import React from 'react';
-import {Button, View, Text} from 'react-native';
+import React, {useState} from 'react';
+import {Button, View, Text, FlatList, TouchableOpacity} from 'react-native';
 import {globalStyles} from "../styles/global";
 
 export default function Home({navigation} ){
@@ -9,10 +9,21 @@ export default function Home({navigation} ){
         //will do same thing more explicit though
         // navigation.push('ReviewDetails');
     }
+    const [reviews, setReviews] = useState([
+        {title: 'Attack on titan', rating: 9, body: 'Action, Gore', key: 1},
+        {title: 'JuJutsu Kaizen', rating: 9, body: 'Action, Gore, Humor', key: 2},
+        {title: 'One Punch man', rating: 9, body: 'Action, Gore, Humor', key: 3},
+        {title: 'Naruto', rating: 9, body: 'Action, Humor', key: 4},
+    ]);
     return(
         <View style={globalStyles.container}>
-            <Text style={globalStyles.titleText}>Home Screen</Text>
-            <Button title='Review Details' onPress={pressHandler}></Button>
+            {/*<Button title='Review Details' onPress={pressHandler}></Button>*/}
+            <FlatList data={reviews} renderItem={({item})=>(
+                <TouchableOpacity onPress={()=>navigation.navigate('ReviewDetails', item)}>
+                    <Text style={globalStyles.titleText}>{item.title}</Text>
+                </TouchableOpacity>
+
+            )}/>
         </View>
     )
 }
