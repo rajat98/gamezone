@@ -11,10 +11,10 @@ export default function Home({navigation} ){
         // navigation.push('ReviewDetails');
     }
     const [reviews, setReviews] = useState([
-        {title: 'Attack on titan', rating: 9, body: 'Action, Gore', key: 1},
-        {title: 'JuJutsu Kaizen', rating: 9, body: 'Action, Gore, Humor', key: 2},
-        {title: 'One Punch man', rating: 9, body: 'Action, Gore, Humor', key: 3},
-        {title: 'Naruto', rating: 9, body: 'Action, Humor', key: 4},
+        {title: 'Attack on titan', rating: 1, body: 'Action, Gore', key: 1},
+        {title: 'JuJutsu Kaizen', rating: 2, body: 'Action, Gore, Humor', key: 2},
+        {title: 'One Punch man', rating: 3, body: 'Action, Gore, Humor', key: 3},
+        {title: 'Naruto', rating: 4, body: 'Action, Humor', key: 4},
     ]);
     return(
         <View style={globalStyles.container}>
