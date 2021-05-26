@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Button, View, Text, FlatList, TouchableOpacity} from 'react-native';
 import {globalStyles} from "../styles/global";
+import Card from'../shared/card';
 
 export default function Home({navigation} ){
     //When we configure Navigator every screen gets navigation property assigned as props
@@ -20,7 +21,9 @@ export default function Home({navigation} ){
             {/*<Button title='Review Details' onPress={pressHandler}></Button>*/}
             <FlatList data={reviews} renderItem={({item})=>(
                 <TouchableOpacity onPress={()=>navigation.navigate('ReviewDetails', item)}>
-                    <Text style={globalStyles.titleText}>{item.title}</Text>
+                    <Card>
+                        <Text style={globalStyles.titleText}>{item.title}</Text>
+                    </Card>
                 </TouchableOpacity>
 
             )}/>

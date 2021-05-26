@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Button} from 'react-native';
 import {globalStyles} from "../styles/global";
+import Card from "../shared/card";
 
 export default function home({navigation}){
     const pressHandler = () => {
@@ -11,10 +12,12 @@ export default function home({navigation}){
     }
     return(
         <View style={globalStyles.container}>
-            <Text>Title: {navigation.getParam('title')}</Text>
-            <Text>Rating: {navigation.getParam('rating')}</Text>
-            <Text>Genre: {navigation.getParam('body')}</Text>
-            {/*<Button title='back' onPress={pressHandler}/>*/}
+            <Card>
+                <Text>Title: {navigation.getParam('title')}</Text>
+                <Text>Rating: {navigation.getParam('rating')}</Text>
+                <Text>Genre: {navigation.getParam('body')}</Text>
+                {/*<Button title='back' onPress={pressHandler}/>*/}
+            </Card>
         </View>
     )
 }
